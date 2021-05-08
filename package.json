@@ -7,7 +7,7 @@
     "dev": "nodemon -r @babel/register -w src/ src/server/index.js",
     "build": "babel src/ -d dist/",
     "dev-build": "npm run build",
-		"serve": "node dist/server",
+    "serve": "node dist/server",
     "start": "node dist/server",
     "test": "npm run test:lint && npm run test:amplint",
     "test:fix": "npm run test:lint -- --fix",
@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@babel/preset-react": "7.0.0",
+    "@postlight/mercury-parser": "^2.2.0",
     "clean-css": "4.2.1",
     "midori": "3.3.0",
     "netlify-cli": "^3.28.0",

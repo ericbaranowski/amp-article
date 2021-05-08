@@ -11,6 +11,8 @@ import {
 } from 'midori';
 import path from 'path';
 import random from 'random';
+import Mercury from '@postlight/mercury-parser';
+
 
 import render from './render';
 random.use('xor128', 'amp-seed');
@@ -40,6 +42,9 @@ const app = compose(
     return send(status, headers, markup);
   }),
 );
+
+Mercury.parse(render)
+
 
 const port = process.env.PORT || 8080;
 
