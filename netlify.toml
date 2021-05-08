@@ -1,5 +1,5 @@
 [build]
-  publish = "dist"
+  publish = "/"
   command = "npm run build"
 [[plugins]]
 	package = "netlify-plugin-amp-server-side-rendering"
