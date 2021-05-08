@@ -11,8 +11,10 @@ import {
 } from 'midori';
 import path from 'path';
 import random from 'random';
-import Mercury from '@postlight/mercury-parser';
+import express from 'express';
+import createMiddleware from 'midori-express';
 
+const expressApp = express();
 
 import render from './render';
 random.use('xor128', 'amp-seed');
@@ -32,7 +34,7 @@ const app = compose(
   use(
     '/static',
     cors,
-    Mercury.parse(serve({root: path.join(__dirname, '..', '..', 'static')})),
+    serve({root: path.join(__dirname, '..', '..', 'static')}),
   ),
   apply(request, url, async (req, {path}) => {
     const {status, headers, markup} = await render({
@@ -46,4 +48,6 @@ const app = compose(
 
 const port = process.env.PORT || 8080;
 
-listen(app, port);
+//listen(app, port);
+expressApp.use(createMiddleware(app));
+expressApp.listen(port);
