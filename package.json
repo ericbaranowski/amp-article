@@ -2,7 +2,7 @@
   "name": "amp-article",
   "version": "0.1.0",
   "private": true,
-	"main": "index.js",
+  "main": "index.js",
   "scripts": {
     "dev": "nodemon -r @babel/register -w src/ src/server/index.js",
     "build": "babel src/ -d dist/",
@@ -40,6 +40,9 @@
     "babel-plugin-module-resolver": "3.1.1",
     "eslint": "5.10.0",
     "eslint-config-metalab": "10.0.0",
+    "jimp": "^0.16.1",
+    "lru-cache": "^4.1.5",
+    "netlify-plugin-amp-server-side-rendering": "^1.0.3",
     "nodemon": "1.18.8",
     "prettier": "1.15.3"
   }
