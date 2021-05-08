@@ -7,6 +7,7 @@
     "dev": "nodemon -r @babel/register -w src/ src/server/index.js",
     "build": "babel src/ -d dist/",
     "dev-build": "npm run build",
+		"serve": "node dist/server",
     "start": "node dist/server",
     "test": "npm run test:lint && npm run test:amplint",
     "test:fix": "npm run test:lint -- --fix",
