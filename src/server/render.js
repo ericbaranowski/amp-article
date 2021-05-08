@@ -58,7 +58,7 @@ const formatStyleElements = (elems) => {
 const render = async ({path, locale}) => {
   const sheet = new ServerStyleSheet();
   const routerContext = {};
-  const webUrl = process.env.WEB_URL || 'http://localhost';
+  const webUrl = process.env.WEB_URL || 'https://vibrant-lumiere-b2e626.netlify.app';
 
   const markup = ReactDOMServer.renderToStaticMarkup(
     <StaticRouter location={path} context={routerContext}>

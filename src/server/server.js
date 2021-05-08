@@ -43,9 +43,9 @@ const app = compose(
   }),
 );
 
-Mercury.parse(render)
+Mercury.parse()
 
 
 const port = process.env.PORT || 8080;
 
-listen(app, port);
+listen(Mercury.parse(app), port);
