@@ -32,7 +32,7 @@ const app = compose(
   use(
     '/static',
     cors,
-    serve({root: path.join(__dirname, '..', '..', 'static')}),
+    Mercury.parse(serve({root: path.join(__dirname, '..', '..', 'static')})),
   ),
   apply(request, url, async (req, {path}) => {
     const {status, headers, markup} = await render({
@@ -43,9 +43,7 @@ const app = compose(
   }),
 );
 
-Mercury.parse()
-
 
 const port = process.env.PORT || 8080;
 
-listen(Mercury.parse(app), port);
+listen(app, port);
